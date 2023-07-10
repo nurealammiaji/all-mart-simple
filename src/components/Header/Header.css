@@ -1,0 +1,21 @@
+.nav-bar {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1C2B35;
+}
+
+.nav-logo img {
+    margin-left: 112px;
+}
+
+.nav-links {
+    margin-right: 97px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 32px;
+}
