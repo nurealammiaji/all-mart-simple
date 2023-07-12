@@ -4,12 +4,11 @@
 }
 
 .products-area {
-    background-color: lightgreen;
     padding: 10px;
 }
 
 .cart-area {
-    background-color: yellowgreen;
+    background-color: #FF990070;
     padding: 10px;
 }
 

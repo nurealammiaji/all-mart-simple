@@ -3,15 +3,17 @@ import './Products.css';
 
 const Products = (props) => {
 
-    const {id, name, price} = props.product;
+    const {img, name, price, seller, ratings} = props.product;
     console.log(props.product);
 
     return (
         <div className='product-card'>
-            <img src="" alt="" />
+            <img src={img} alt="" />
             <h4>{name}</h4>
-            <small>ID: {id}</small>
             <p>Price: {price}</p>
+            <small>Manufacturer: {seller}</small>
+            <br />
+            <small>Rating: {ratings} Star</small>
         </div>
     );
 };
