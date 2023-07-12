@@ -1,5 +1,20 @@
 .shop {
-    background-color: aquamarine;
     display: grid;
     grid-template-columns: 4fr 1fr;
+}
+
+.products-area {
+    background-color: lightgreen;
+    padding: 10px;
+}
+
+.cart-area {
+    background-color: yellowgreen;
+    padding: 10px;
+}
+
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
 }
