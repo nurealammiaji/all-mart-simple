@@ -16,4 +16,9 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
+    margin-top: 120px;
+}
+
+.cart-container {
+    margin-top: 28px;
 }
