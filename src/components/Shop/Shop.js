@@ -6,6 +6,8 @@ const Shop = () => {
 
     const [products, setProducts] = useState([]);
 
+    const [cart, setCart] = useState([]);
+
     useEffect( () => {
         fetch('products.json')
         .then(res => res.json())
@@ -14,6 +16,7 @@ const Shop = () => {
 
     const addToCart = (product) => {
         console.log(product);
+        setCart(product);
     }
 
     return (
@@ -29,16 +32,16 @@ const Shop = () => {
                 <div className='cart-container'>
                     <h3>Order Summary</h3>
                     <div className='order-info'>
-                        <p>Selected Items: </p>
+                        <p>Selected Items: {cart.name}</p>
                         <p>Total Price: </p>
                         <p>Total Shipping Charge: </p>
                         <p>Tax: </p>
                         <h5>Grand Total: </h5>
                     </div>
-                    <button>Clear Cart</button>
+                    <button className='btn-clear-cart'>Clear Cart</button>
                     <br/>
                     <br/>
-                    <button>Review Order</button>
+                    <button className='btn-review-order'>Review Order</button>
                 </div>
             </div>
         </div>

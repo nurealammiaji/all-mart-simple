@@ -26,3 +26,15 @@
 .order-info {
     margin-top: 50px;
 }
+
+.btn-clear-cart {
+    height: 48px;
+    width: 232px;
+    background-color: #FF3030;
+}
+
+.btn-review-order {
+    height: 48px;
+    width: 232px;
+    background-color: #FF9900;
+}
