@@ -6,7 +6,17 @@ import { AuthProvider } from '../../Providers/Providers';
 
 const Header = () => {
 
-    const { user } = useContext(AuthProvider);
+    const { user, logout } = useContext(AuthProvider);
+
+    const logoutHandler = () => {
+        logout()
+        .then(result => {
+            console.log(result);
+        })
+        .catch(error => {
+            console.log(error.message);
+        })
+    }
 
     return (
         <nav className='nav-bar'>
@@ -19,7 +29,7 @@ const Header = () => {
                 <Link to="/inventory">Manage Inventory</Link>
                 <Link to="/registration">Registration</Link>
                 <Link to="/login">Login</Link>
-                {user && <><span>{user.displayName}</span><button>Logout</button></>}
+                {user && <><span>{user.email}</span><button onClick={logoutHandler}>Logout</button></>}
             </div>
         </nav>
     );
