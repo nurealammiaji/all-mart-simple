@@ -16,8 +16,8 @@ const Login = () => {
                         <input type="password" name="password" required />
                     </div>
                     <div className="form-control">
-                        <label htmlFor="password">Confirm Password</label>
-                        <input type="password" name="confirm-password" required />
+                        <label htmlFor="confirm">Confirm Password</label>
+                        <input type="password" name="confirm" required />
                     </div>
                     <button className="login-btn" type="submit">Login</button>
                     <p className="or">or</p>
