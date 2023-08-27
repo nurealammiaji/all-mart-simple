@@ -19,7 +19,9 @@ const Login = () => {
                         <label htmlFor="password">Confirm Password</label>
                         <input type="password" name="confirm-password" required />
                     </div>
-                    <button type="submit">Login</button>
+                    <button className="login-btn" type="submit">Login</button>
+                    <p className="or">or</p>
+                    <button className="google-btn" type="button">Continue with Google</button>
                 </form>
             </div>
         </div>
