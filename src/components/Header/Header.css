@@ -24,3 +24,12 @@
     color: white;
     margin-left: 32px;
 }
+
+.nav-link span {
+    margin-left: 32px;
+    color: white;
+}
+
+.nav-link button {
+    margin-left: 8px;
+}

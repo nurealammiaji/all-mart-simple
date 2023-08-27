@@ -11,6 +11,7 @@ const Registration = () => {
         const confirm = form.confirm.value;
         console.log(name, email, password, confirm);
     }
+
     return (
         <div>
             <br /><br />
