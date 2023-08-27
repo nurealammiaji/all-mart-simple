@@ -1,6 +1,10 @@
 import "./Login.css";
+import { useContext } from "react";
+import { AuthProvider } from "../../Providers/Providers";
 
 const Login = () => {
+
+    const { login } = useContext(AuthProvider);
 
     const handleLogin = (event) => {
         event.preventDefault();
@@ -9,6 +13,25 @@ const Login = () => {
         const password = form.password.value;
         const confirm = form.confirm.value;
         console.log(email, password, confirm);
+        if (password !== confirm) {
+            console.log("Password did not match");
+            return;
+        }
+        else if (password.length < 6) {
+            console.log("Password length less than six");
+            return;
+        }
+        else {
+            login(email, password)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+            })
+            .catch(error => {
+                console.log(error.message);
+            })
+            form.reset();
+        }
     }
 
     return (
