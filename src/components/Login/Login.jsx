@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
 
-    const { login } = useContext(AuthProvider);
+    const { login, googleLogin } = useContext(AuthProvider);
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -34,13 +34,24 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
+                form.reset();
+                navigate(from, {replace: true});
             })
             .catch(error => {
                 console.log(error.message);
             })
-            form.reset();
-            navigate(from, {replace: true});
         }
+    }
+
+    const handleGoogleLogin = () => {
+        googleLogin()
+        .then(result => {
+            console.log(result);
+            navigate(from, {replace: true});
+        })
+        .then(error => {
+            console.log(error);
+        })
     }
 
     return (
@@ -63,7 +74,7 @@ const Login = () => {
                     </div>
                     <button className="login-btn" type="submit">Login</button>
                     <p className="or">or</p>
-                    <button className="google-btn" type="button">Continue with Google</button>
+                    <button onClick={handleGoogleLogin} className="google-btn" type="button">Continue with Google</button>
                 </form>
             </div>
         </div>
