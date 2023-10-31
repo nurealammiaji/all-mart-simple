@@ -10,12 +10,12 @@ const Header = () => {
 
     const logoutHandler = () => {
         logout()
-            .then(result => {
-                console.log(result);
-            })
-            .catch(error => {
-                console.log(error.message);
-            })
+        .then(result => {
+            console.log(result);
+        })
+        .catch(error => {
+            console.log(error.message);
+        })
     }
 
     return (
@@ -27,13 +27,9 @@ const Header = () => {
                 <Link to="/shop">Shop</Link>
                 <Link to="/orders">Order Review</Link>
                 <Link to="/inventory">Manage Inventory</Link>
-                {
-                    (user) ? <><small>{user.email}</small><button onClick={logoutHandler}>Logout</button></> :
-                        <>
-                            <Link to="/registration">Registration</Link>
-                            <Link to="/login">Login</Link>
-                        </>
-                }
+                <Link to="/registration">Registration</Link>
+                <Link to="/login">Login</Link>
+                {user && <><small>{user.email}</small><button onClick={logoutHandler}>Logout</button></>}
             </div>
         </nav>
     );
